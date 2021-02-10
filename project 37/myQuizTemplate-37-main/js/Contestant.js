@@ -1,0 +1,19 @@
+class Contestant{
+ constructor(){
+    this.index = null;
+    this.name = null;
+ }
+ getCount(){
+    var contestantCountRef = database.ref('contestantCount');
+    contestantCountRef.on("value",(data)=>{
+        contestantCountRef = data.val();
+    })
+ }
+ updateCount(count){
+    database.ref('/').update({
+      contestantCount: count
+    });
+  }
+  
+  
+}
